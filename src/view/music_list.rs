@@ -54,7 +54,7 @@ pub fn draw_music_list<B: Backend>(
                     let name = split_path_to_name(path);
 
                     music_names.push(get_spans(
-                        "  ".to_string(),
+                        " 🎵 ".to_string(),
                         name.to_string(),
                         theme.list_icon_color,
                         theme.list_music_color,
@@ -64,7 +64,7 @@ pub fn draw_music_list<B: Backend>(
                     let name = split_path_to_name(path);
 
                     music_names.push(get_spans(
-                        "  ".to_string(),
+                        " 📁 ".to_string(),
                         name.to_string(),
                         theme.list_icon_color,
                         theme.list_folder_color,

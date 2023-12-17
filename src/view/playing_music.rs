@@ -19,11 +19,11 @@ pub fn draw_playing_music<B: Backend>(
     volume: f32,
     play_style: &PlayStyle,
 ) {
-    let mut play_style_icon = "劣";
+    let mut play_style_icon = "🥂";
     let mut label = "";
     let mut percent = 0;
     match play_style {
-        PlayStyle::SingleCycle => play_style_icon = "綾",
+        PlayStyle::SingleCycle => play_style_icon = "🍸",
         _ => {}
     }
 
@@ -49,7 +49,7 @@ pub fn draw_playing_music<B: Backend>(
         }
 
         block_title.push(Span::styled(
-            "ﱘ ",
+            "🎧",
             Style::default().fg(theme.list_icon_color),
         ));
         block_title.push(Span::styled(
@@ -78,10 +78,10 @@ pub fn draw_playing_music<B: Backend>(
     {
         block_title.push(Span::styled(
             match volume {
-                v if v >= 0.7 => " ",
-                v if v >= 0.3 => "奔",
-                v if v > 0.0 => "奄",
-                _ => "婢 ",
+                v if v >= 0.7 => "🔊 ",
+                v if v >= 0.3 => "🔉 ",
+                v if v > 0.0 => "🔈 ",
+                _ => "🔇 ",
             },
             Style::default().fg(theme.volume_icon_color),
         ));
