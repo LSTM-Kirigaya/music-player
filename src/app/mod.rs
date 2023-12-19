@@ -293,7 +293,7 @@ impl<'a> App<'a> {
                         Err(err) => self.error = Some(err),
                     };
                 }
-                DirectoryItem::Directory(_) => self.error = Some(String::from("Is a directory")),
+                DirectoryItem::Directory(_) => self.open_folder(),
             },
             None => {}
         };

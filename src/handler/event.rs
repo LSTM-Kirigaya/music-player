@@ -26,13 +26,13 @@ pub fn handle_event(app: &mut App, music_database: &str) -> Result<bool, ExitFai
                 KeyCode::Char('n') => app.next_page(),
                 KeyCode::Char('N') => app.previous_page(),
                 KeyCode::Char('l') => app.open_folder(),
-                KeyCode::Char('h') => app.back_previous_folder(music_database),
+                KeyCode::Backspace => app.back_previous_folder(music_database),
                 KeyCode::Enter => app.add_music_to_list(),
                 KeyCode::Char(' ') => app.stop_or_start_play(),
                 KeyCode::Char('-') => app.update_volume(&|v| if v > 0.0 {v - 0.05} else {0.0}),
                 KeyCode::Char('=') => app.update_volume(&|v| if v < 1.25 {v + 0.05} else {1.25}),
                 KeyCode::Char('+') => app.update_volume(&|v| if v < 1.25 {v + 0.05} else {1.25}),
-                KeyCode::Char('|') => app.set_mode(Mode::Search),
+                KeyCode::Char('/') => app.set_mode(Mode::Search),
                 KeyCode::Char(':') => app.set_mode(Mode::Command),
                 KeyCode::Esc => {
                     app.populate_files()?;
